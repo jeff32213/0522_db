@@ -41,7 +41,7 @@ def get_data(company, start, end, cursor):
 
 def get_turning_wave(company, start, end, cursor):
     command = f"""select end_day, end_day_price, trend
-            from find_trend('2330')
+            from find_trend('{company}')
             where end_day > '{start}' and end_day < '{end}'
             order by end_day asc
           """
