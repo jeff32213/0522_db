@@ -31,8 +31,8 @@ def get_data(company, start, end, cursor):
     
     arr_df = pd.DataFrame(arr)
     arr_df['Date'] = pd.to_datetime(arr_df[0])
-    arr_df = arr_df.sort_values(by="Date") # remove extra date column
-    arr_df = arr_df.drop(columns=[0])
+    arr_df = arr_df.sort_values(by="Date")
+    arr_df = arr_df.drop(columns=[0]) # remove extra date column
     arr_df.set_index("Date",inplace=True)
     
     arr_df.columns = ['Open', 'High', 'Low', 'Close', 'Volume','MA5','MA10']
